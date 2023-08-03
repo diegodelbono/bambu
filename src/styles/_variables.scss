@@ -1,0 +1,39 @@
+// Colors
+$color-green: #57773d;
+$color-grey: #f3f1f0;
+
+$primary-color: $color-green;
+
+$grey-bg: $color-grey;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500&display=swap');
+
+$font-family-alegreya: 'Alegreya Sans';
+$font-family-primary: $font-family-alegreya, sans-serif;
+
+$font-size-sm: 1.25rem;
+$font-size-md: 2.25rem;
+$font-size-lg: 5rem;
+
+$font-size-base: $font-size-sm;
+
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+
+$font-weight-base: $font-weight-normal;
+
+$font-color-base: $primary-color;
+
+
+$heading-font-size-base: $font-size-md;
+$heading-font-size-weight: $font-weight-base;
+
+$line-height-base: 1;
+
+// Border radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 1rem;
+$border-radius-lg: 2rem;
+
+$border-radius-base: $border-radius-md;

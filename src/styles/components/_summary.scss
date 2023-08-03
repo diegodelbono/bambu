@@ -1,0 +1,8 @@
+.summary {
+  border: 2px solid blue;
+  margin: 2rem 0 4rem 0;
+  font-size: $font-size-md;
+  margin-left: auto;
+  //width: 50%;
+  width: calc(50% - 1rem);
+}

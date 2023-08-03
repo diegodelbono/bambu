@@ -1,0 +1,11 @@
+.header {
+    background-color: white;
+    border: 3px solid $primary-color;
+    padding: 2rem 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        border: 3px solid pink;
+    }
+}

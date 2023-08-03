@@ -1,0 +1,28 @@
+.footer {
+  //border: 2px solid blue;
+  margin: 2rem 0;
+
+  &__container {
+    display: flex;
+    gap: 4rem;
+    //justify-content: space-between;
+    //border: 3px solid pink;
+    border-top: 1px solid $primary-color;
+    padding: 2rem 0;
+  }
+
+  &__col {
+    //border: 2px solid orange;
+
+    &--end {
+      border: 2px solid red;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
