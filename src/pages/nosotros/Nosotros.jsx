@@ -1,24 +1,26 @@
 import React from "react";
-import { Loading, Slider } from "../../components";
+import { About, Accordion, Loading, Image, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 
 const Nosotros = () => {
 	const { data, isLoading } = useApiData("nosotros");
 
+	{ console.log("data en nosotros", data) }
+
 	if (isLoading) {
-        return <Loading />;
-    }
+		return <Loading />;
+	}
 
 	return (
 		<>
 			{data && <>
 				<Slider data={data.acf.slide} />
-				<main className="main container">
-					<section className="section">
-						<div className="summary">
-							{data.acf.summary}
-						</div>
-					</section>
+				<main className="main">
+					<div className="main__container container">
+						<Summary data={data.acf.summary} />
+						<Accordion data={data.acf.accordion} />
+						<About data={data.acf.about} />
+					</div>
 				</main>
 			</>}
 		</>

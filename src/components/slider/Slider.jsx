@@ -1,7 +1,8 @@
 import { Image } from "../../components";
 
-const Slider = ({ data }) => {
+const Slider = ({ data, slideHome }) => {
   const { title, background } = data;
+  console.log("slideHome", slideHome)
 
   return (
     <div className="slider">

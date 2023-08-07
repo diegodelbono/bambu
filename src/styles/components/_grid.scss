@@ -1,18 +1,14 @@
 .container {
-   // border: 3px solid orange;
-    margin: 0 auto;
-    padding: 0 2rem;
-    max-width: 1300px;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: $padding-no $padding-lg;
 }
 
-
 .grid {
-   border: 2px solid red;
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: $gap-sm;
 
-    &__col {
-     border: 3px solid blue;
-        width: 50%;
-    }
+  &__col {
+    width: 50%;
+  }
 }

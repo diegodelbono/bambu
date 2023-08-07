@@ -11,7 +11,7 @@ const Image = ({ id }) => {
 	}, [id]);
 
 	return (
-		<>{imageUrl && <img src={imageUrl} alt="Imagen desde API" />}</>
+		<>{imageUrl && <figure className="figure"><img src={imageUrl} alt="Imagen desde API" /></figure>}</>
 	);
 };
 

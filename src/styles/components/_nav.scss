@@ -1,16 +1,18 @@
 .nav {
-    border: 3px solid orange;
-    display: flex;
+  display: flex;
 
-    &__item {
-        border: 2px solid transparent;
-        border-radius: 1.5rem;
-        margin-left: 1rem;
-        padding: 0.125rem 0.75rem;
+  &__item {
+    border: $border-type-base transparent;
+    border-radius: $border-radius-md;
+    margin-left: $margin-sm;
+    padding: $padding-xs $padding-sm;
 
-        &.active {
-            border-color: $primary-color;
-            
-        }
+    &.active {
+      border-color: $primary-color;
     }
+  }
+
+  @include breakpoint(md) {
+    display: none;
+  }
 }

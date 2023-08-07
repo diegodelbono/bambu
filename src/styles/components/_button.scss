@@ -1,12 +1,11 @@
 .button {
   @include transition(all 0.5s ease);
   border-radius: $border-radius-base;
-  border: 1px solid $primary-color;
-  color: $primary-color;
-  cursor: pointer;
-  
-  padding: 0.25rem 1rem;
-  
+  border: $border-type-base $border-color-base;
+  color: $primary-color;  
+  cursor: pointer;  
+  display: inline-block;
+  padding: $padding-xs $padding-md;  
 
   &:hover,
   &:focus {

@@ -6,17 +6,40 @@ $primary-color: $color-green;
 
 $grey-bg: $color-grey;
 
+$color-bg-base: $grey-bg;
+
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500&display=swap');
 
 $font-family-alegreya: 'Alegreya Sans';
 $font-family-primary: $font-family-alegreya, sans-serif;
 
-$font-size-sm: 1.25rem;
+$font-size-sm: 1.375rem;
 $font-size-md: 2.25rem;
 $font-size-lg: 5rem;
 
-$font-size-base: $font-size-sm;
+// 22
+// 30
+// 40
+// 50
+// 120
+
+// --------------------------------------------------------
+//  Fonts size
+// --------------------------------------------------------
+$font-size-xs: 1.375rem; //22
+$font-size-sm: 1.875rem; // 30
+$font-size-md: 2.5rem; // 40
+$font-size-lg: 3.125; // 50
+$font-size-xl: 7.5rem; // 120
+
+
+$font-size-base: $font-size-xs;
+
+
+// --------------------------------------------------------
+//  Fonts
+// --------------------------------------------------------
 
 $font-weight-normal: 400;
 $font-weight-bold: 500;
@@ -29,11 +52,65 @@ $font-color-base: $primary-color;
 $heading-font-size-base: $font-size-md;
 $heading-font-size-weight: $font-weight-base;
 
-$line-height-base: 1;
+$line-height-base: 1.25;
 
-// Border radius
-$border-radius-sm: 0.25rem;
-$border-radius-md: 1rem;
+// --------------------------------------------------------
+//  Border
+// --------------------------------------------------------
+$border-type-base: 1px solid;
+$border-color-base:  $primary-color;
+
+
+
+// --------------------------------------------------------
+//  Border Radius
+// --------------------------------------------------------
+$border-radius-sm: 1rem;
+$border-radius-md: 1.5rem;
 $border-radius-lg: 2rem;
 
 $border-radius-base: $border-radius-md;
+
+// --------------------------------------------------------
+//  Breakpoints
+// --------------------------------------------------------
+$break-xs-min: 25rem; // 420px
+$break-sm-min: 38rem; // 600px
+$break-md-min: 48rem; // 768px
+$break-lg-min: 64rem; // 1024px
+
+$breakpoints: (
+  xs: $break-xs-min,
+  sm: $break-sm-min,
+  md: $break-md-min,
+  lg: $break-lg-min,
+);
+
+// --------------------------------------------------------
+//  Ga
+// --------------------------------------------------------
+$gap-xs: 1rem; 
+$gap-sm: 2rem;
+$gap-md: 4rem;
+$gap-lg: 6rem;
+
+
+// --------------------------------------------------------
+//  Margins
+// --------------------------------------------------------
+$margin-xs: 0.5rem; 
+$margin-sm: 1rem;
+$margin-md: 1.5em;
+$margin-lg: 2rem;
+$margin-no: 0;
+
+// --------------------------------------------------------
+//  Padding
+// --------------------------------------------------------
+$padding-xs: 0.5rem; 
+$padding-sm: 1rem;
+$padding-md: 1.5em;
+$padding-lg: 2rem;
+$padding-no: 0;
+
+$page-max-width: 1300px;

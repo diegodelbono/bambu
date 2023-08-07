@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/imagoBambu.png";
+import Logo from "../../assets/Bambu-imago.svg";
 
 const Footer = () => {
 
@@ -8,7 +8,9 @@ const Footer = () => {
             <div className="container">
                 <div className="footer__container">
                     <div className="footer__col">
-                        <img src={Logo} />
+                        <div className="imago">
+                            <img src={Logo} />
+                        </div>
                     </div>
                     <div className="footer__col">
                         <div className="footer__menu">

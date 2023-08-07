@@ -14,3 +14,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin position-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+// Breakpoint
+@mixin breakpoint($breakpoint-size) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint-size);
+  @media only screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}

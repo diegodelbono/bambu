@@ -1,8 +1,16 @@
 .summary {
-  border: 2px solid blue;
-  margin: 2rem 0 4rem 0;
+  border: 2px solid orange;
+  display: flex;
   font-size: $font-size-md;
-  margin-left: auto;
-  //width: 50%;
-  width: calc(50% - 1rem);
+  justify-content: flex-end;
+  margin: $margin-lg $margin-no;
+
+  &__col {
+    width: 50%;
+  }
+  
+  @include breakpoint(md) {
+    //display: none;
+    border: 3px solid blue;
+  }
 }

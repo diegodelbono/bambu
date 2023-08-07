@@ -1,27 +1,28 @@
 import React from "react";
-import { Article, Loading, Slider } from "../../components";
+import { Article, Loading, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 
 const Servicios = () => {
 	const { data, isLoading } = useApiData("servicios");
 
 	if (isLoading) {
-        return <Loading />;
-    }
+		return <Loading />;
+	}
 
 	return (
 		<>
 			{data && <>
 				<Slider data={data.acf.slide} />
-				<main className="main container">
-					<section className="section">
-						<div className="summary">
+				<main className="main ">
+					<div className="main__container container">
+						{/* <div className="summary">
 							{data.acf.summary}
-						</div>
+						</div> */}
+						<Summary data={data.acf.summary} />
 						{data.acf.article.map((article, index) => (
 							<Article data={article} key={index} />
 						))}
-					</section>
+					</div>
 				</main>
 			</>}
 		</>

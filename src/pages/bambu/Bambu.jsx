@@ -1,28 +1,46 @@
 import React from "react";
-import { Article, Loading, Slider } from "../../components";
+import { Accordion, Loading, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 
 const Bambu = () => {
-	const { data, isLoading } = useApiData("bambu");
+	const { data, isLoading } = useApiData("el-bambu");
+
+	{ console.log("el bambu", data) }
 
 	if (isLoading) {
-        return <Loading />;
-    }
+		return <Loading />;
+	}
 
 	return (
 		<>
 			{data && <>
 				<Slider data={data.acf.slide} />
-				<main className="main container">
-					<section className="section">
-						<div className="summary">
-							{data.acf.summary}
+				<main className="main">
+					{/* <div className="summary">
+						<div className="grid">
+							<div className="grid__col">
+								<h2>{data.acf.summary.title}</h2>
+							</div>
+							<div className="grid__col">
+								<p>{data.acf.summary.resume}</p>
+							</div>
 						</div>
-						{data.acf.article.map((article, index) => (
-							<Article data={article} key={index} />
-						))}
+					</div> */}
+					{/* <div className="summary">
+						<p>{data.acf.summary.resume}</p>
+					</div> */}
 
-					</section>
+					<div className="main__container container">
+						<Summary data={data.acf.summary} />
+						<Accordion data={data.acf.accordion} />
+					</div>
+					{/* {data.acf.accordion.map((item, index) => (
+						<div>
+							<p>{item.title}</p>
+							<p>{item.resume}</p>
+						</div>
+						// <Article data={article} key={index} />
+					))} */}
 				</main>
 			</>}
 		</>

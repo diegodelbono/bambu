@@ -6,11 +6,14 @@
 h1, h2, h3 {
     font-size: $heading-font-size-base;
     font-weight: $heading-font-size-weight;
-    border: 3px solid red;
 }
 
 a {
     text-decoration: none;
+}
+
+p {
+    margin-bottom: 1rem;
 }
 
 .text-white {

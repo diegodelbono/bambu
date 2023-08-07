@@ -1,5 +1,8 @@
 .article {
-  border: 2px solid violet;
-  //margin: 2rem 0;
-  margin-bottom: 5rem;
+  margin-bottom: $margin-lg;
+
+  &__figure {
+    margin-bottom: $margin-lg;
+  }
 }
+

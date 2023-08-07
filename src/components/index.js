@@ -1,3 +1,4 @@
+export { About } from "./about";
 export { Accordion } from "./accordion";
 export { Article } from "./article";
 export { Button } from "./button";
@@ -7,3 +8,4 @@ export { Image } from "./image";
 export { Nav } from "./nav";
 export { Footer } from "./footer";
 export { Slider } from "./slider";
+export { Summary } from "./summary";

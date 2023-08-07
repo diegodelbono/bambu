@@ -1,6 +1,7 @@
 body {
   background-color: $grey-bg;
   font-family: $font-family-primary;
+  font-weight: $font-weight-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
 }
@@ -8,4 +9,28 @@ body {
 img {
   display: block;
   width: 100%;
+}
+
+.main {
+  border: 2px solid red;
+  padding: 2rem 0;
+  background-color: $grey-bg;
+  //border: 2px solid violet;
+  position: relative;
+  //z-index: 3;
+}
+
+.logo {
+  width: 12.5rem;
+}
+.imago {
+   width: 2.5rem;
+ }
+
+
+.figure,
+figure {
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+  border: 2px solid red;
 }
