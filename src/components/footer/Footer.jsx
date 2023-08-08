@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="footer__col footer__col--end">
                         <p>vivero@bambudeleste.com.uy <br /> +598 98 46 47 48</p>
                         <p>Costa Azul, Canelones <br /> Uruguay</p>
-                        <p>© Bambú del Este 2023</p>
+                        <div className="copy">© Bambú del Este 2023</div>
                     </div>
                 </div>
             </div>

@@ -1,23 +1,18 @@
 const Summary = ({ data }) => {
+    const { title, resume } = data;
 
-console.log("data en summary", data)
-
-  const { title, resume } = data;
-  // console.log("slideHome", slideHome)
-
-  return (
-    <div className="summary">
-      {title && (
-        <div className="summary__col">
-          <h2>{title}</h2>
+    return (
+        <div className="summary">
+            {title && (
+                <div className="summary__col">
+                    <h2>{title}</h2>
+                </div>
+            )}
+            <div className="summary__col">
+                {resume ? <p dangerouslySetInnerHTML={{ __html: resume }} /> : <p className="font-size-md" dangerouslySetInnerHTML={{ __html: data }} />}
+            </div>
         </div>
-      )}
-
-      <div className="summary__col">
-        {resume ? <p>{resume}</p> : <p>{data}</p>}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Summary;

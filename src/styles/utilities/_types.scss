@@ -6,7 +6,13 @@
 h1, h2, h3 {
     font-size: $heading-font-size-base;
     font-weight: $heading-font-size-weight;
+    margin-bottom: 1rem;
 }
+
+h3 {
+    font-size: 30px;
+}
+
 
 a {
     text-decoration: none;
@@ -14,8 +20,18 @@ a {
 
 p {
     margin-bottom: 1rem;
+    line-height: 1.25;
 }
 
 .text-white {
     color: white;
 }
+
+.font-size-md {
+    font-size: $font-size-md;
+}
+
+
+// h-large
+
+// p-small

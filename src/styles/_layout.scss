@@ -12,25 +12,49 @@ img {
 }
 
 .main {
-  border: 2px solid red;
   padding: 2rem 0;
   background-color: $grey-bg;
-  //border: 2px solid violet;
   position: relative;
-  //z-index: 3;
+  z-index: 3;
 }
 
 .logo {
   width: 12.5rem;
 }
 .imago {
-   width: 2.5rem;
- }
-
+  width: 2.5rem;
+}
 
 .figure,
 figure {
   border-radius: $border-radius-sm;
   overflow: hidden;
-  border: 2px solid red;
+}
+
+.group-link {
+  margin: 6.25rem 0 6.25rem -2.25rem;
+
+  @include breakpoint(md) {
+    margin: 2rem 0;
+  }
+
+  &__item {
+    margin-bottom: 1rem;
+  }
+}
+
+.products {
+  margin-bottom: 8rem;
+  h2 {
+    margin-bottom: 5.5rem;
+  }
+
+  .product {
+    .figure {
+      margin-bottom: 2rem;
+    }
+    .button {
+      margin-top: 1rem;
+    }
+  }
 }

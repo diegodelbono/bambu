@@ -1,16 +1,9 @@
-import { Image } from "../../components";
-
-const Slider = ({ data, slideHome }) => {
+const Slider = ({ data }) => {
   const { title, background } = data;
-  console.log("slideHome", slideHome)
-
   return (
-    <div className="slider">
+    <div className="slider" style={{ background: `url(${background})` }}>
       <div className="slider__content">
         <h1 className="text-white">{title}</h1>
-      </div>
-      <div className="slider__image">
-        <Image id={background} />
       </div>
     </div>
   );

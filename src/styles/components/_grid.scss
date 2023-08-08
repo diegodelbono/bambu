@@ -5,10 +5,14 @@
 }
 
 .grid {
-  display: flex;
-  gap: $gap-sm;
+  @include grid($gap-sm);
 
-  &__col {
-    width: 50%;
+  &--col-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .grid__col {
+      width: 100%;
+    }
   }
 }

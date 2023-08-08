@@ -1,16 +1,9 @@
 .summary {
-  border: 2px solid orange;
-  display: flex;
-  font-size: $font-size-md;
+  @include grid(1rem);
   justify-content: flex-end;
-  margin: $margin-lg $margin-no;
+  margin: 7rem $margin-no;
 
-  &__col {
-    width: 50%;
-  }
-  
   @include breakpoint(md) {
-    //display: none;
-    border: 3px solid blue;
+    margin: 2rem 0;
   }
 }

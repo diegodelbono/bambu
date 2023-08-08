@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 const Accordion = ({ data }) => {
     const [openIndex, setOpenIndex] = useState(null);
 
-    console.log("data en accordion", data)
-
     const toggleAccordion = (index) => {
         if (openIndex === index) {
             setOpenIndex(null);
@@ -17,15 +15,16 @@ const Accordion = ({ data }) => {
         <div className="accordion">
             {data.map((item, index) => (
                 <div key={index} className={`accordion__item ${openIndex === index ? 'open' : ''}`}>
-                    <div className="accordion__title">
-                        <div>{item.title}</div>
-                        <div className="accordion__button" onClick={() => toggleAccordion(index)}>
-                            {openIndex === index ? '-' : '+'}
+                    <div className="accordion__col">
+                        <div className="accordion__title">
+                            <h3>{item.title}</h3>
+                            <div className="accordion__button" onClick={() => toggleAccordion(index)}>
+                                {openIndex === index ? '-' : '+'}
+                            </div>
                         </div>
                     </div>
-                    <div className="accordion__content">
-                        {/* {openIndex === index && <p>{item.resume}</p>} */}
-                        {openIndex === index && <div dangerouslySetInnerHTML={{ __html: item.resume }}  />}
+                    <div className="accordion__col">
+                        {openIndex === index && <div dangerouslySetInnerHTML={{ __html: item.resume }} />}
                     </div>
                 </div>
             ))}

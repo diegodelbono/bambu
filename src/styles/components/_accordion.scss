@@ -1,31 +1,17 @@
 .accordion {
   margin: 2rem 0;
-  //border: 2px solid red;
 
   &__item {
-    //border: 2px solid blue;
-    display: flex;
-    gap: 4rem;
     margin-bottom: 3rem;
+    @include grid(2rem);
   }
 
   &__title {
-   // border: 2px solid orange;
-    font-size: 30px;
     display: flex;
     justify-content: space-between;
-    width: 50%;
-  }
 
-  &__content {
-    //border: 2px solid pink;
-    width: 50%;
-
-    img {
-    //  border: 2px solid red;
-      border-radius: $border-radius-sm;
-      overflow: hidden;
-      margin-bottom: 2rem;
+    * {
+      margin: 0;
     }
   }
 }

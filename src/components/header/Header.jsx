@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Nav } from "../nav";
 import Logo from '../../assets/Bambu-logo.svg';
 
@@ -21,9 +22,11 @@ const Header = () => {
     <header className={`header ${sticky ? 'header--sticky' : ''}`}>
       <div className="header__container container">
         <div className="header__item">
-          <div className="logo">
-            <img src={Logo} alt="Logo" />
-          </div>
+          <Link to="home">
+            <div className="logo">
+              <img src={Logo} alt="Logo" />
+            </div>
+          </Link>
         </div>
         <div className="header__item">
           <Nav />

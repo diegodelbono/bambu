@@ -15,9 +15,6 @@ const Servicios = () => {
 				<Slider data={data.acf.slide} />
 				<main className="main ">
 					<div className="main__container container">
-						{/* <div className="summary">
-							{data.acf.summary}
-						</div> */}
 						<Summary data={data.acf.summary} />
 						{data.acf.article.map((article, index) => (
 							<Article data={article} key={index} />

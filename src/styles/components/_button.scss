@@ -2,14 +2,34 @@
   @include transition(all 0.5s ease);
   border-radius: $border-radius-base;
   border: $border-type-base $border-color-base;
-  color: $primary-color;  
-  cursor: pointer;  
+  color: $primary-color;
+  cursor: pointer;
   display: inline-block;
-  padding: $padding-xs $padding-md;  
+  padding: $padding-xs $padding-md;
+  line-height: 1;
 
   &:hover,
   &:focus {
     background-color: $primary-color;
     color: white;
+  }
+
+  &--big {
+    border-radius: 5rem;
+    font-size: $font-size-xl;
+    padding: 0.25rem 1.5rem;
+   // border: $border-type-base transparent;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: $border-type-base $border-color-base;
+      color: $primary-color;
+    }
+
+    @include breakpoint(md) {
+      font-size: $font-size-sm;
+      //display: none;
+    }
   }
 }

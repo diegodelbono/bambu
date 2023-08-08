@@ -8,7 +8,7 @@ const useApiData = (url) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://bambudeleste.com.uy/wordpress/wp-json/wp/v2/pages/?slug=${url}`);
+        const response = await axios.get(`https://bambudeleste.com.uy/wordpress/wp-json/wp/v2/pages/?slug=${url}&_fields=acf&acf_format=standard`);
         setData(response.data[0]);
         setIsLoading(false);
       } catch (error) {
@@ -20,8 +20,8 @@ const useApiData = (url) => {
     fetchData();
   }, []);
 
-  return {data, isLoading};
 
+  return {data, isLoading};
 }
 
 export default useApiData;

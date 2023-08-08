@@ -19,6 +19,7 @@
   position: sticky;
   top: 0;
   z-index: 2;
+  width: 100%;
 }
 
 // Breakpoint
@@ -26,5 +27,52 @@
   $breakpoint-value: map-get($breakpoints, $breakpoint-size);
   @media only screen and (max-width: $breakpoint-value) {
     @content;
+  }
+}
+
+@each $size, $value in $p-sizes {
+  .p-#{$size} {
+    border: 3px solid pink;
+    font-size: $value;
+    //@include font-size('p', $size);
+  }
+}
+
+@each $size, $value in $h-sizes {
+  .h-#{$size} {
+    border: 3px solid pink;
+    font-size: $value;
+    //@include font-size('p', $size);
+  }
+}
+
+// // Fonts
+// @mixin p-sizes {
+//   @each $size, $value in $p-sizes {
+//     .p-#{$size} {
+//       font-size: $value;
+//     }
+//   }
+// }
+
+// @mixin h-sizes {
+//   @each $size, $value in $h-sizes {
+//     .h-#{$size} {
+//       font-size: $value;
+//     }
+//   }
+// }
+
+// Gap
+@mixin grid($gap){
+  display: flex;
+  gap: $gap;
+
+  &__col {
+    flex: 1;
+  }
+
+  @include breakpoint(md) {
+    flex-direction: column;
   }
 }

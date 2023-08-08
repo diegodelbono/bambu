@@ -1,3 +1,4 @@
+export { App } from "./app";
 export { About } from "./about";
 export { Accordion } from "./accordion";
 export { Article } from "./article";

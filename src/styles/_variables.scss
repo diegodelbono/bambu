@@ -9,9 +9,9 @@ $grey-bg: $color-grey;
 $color-bg-base: $grey-bg;
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500&display=swap");
 
-$font-family-alegreya: 'Alegreya Sans';
+$font-family-alegreya: "Alegreya Sans";
 $font-family-primary: $font-family-alegreya, sans-serif;
 
 $font-size-sm: 1.375rem;
@@ -33,8 +33,19 @@ $font-size-md: 2.5rem; // 40
 $font-size-lg: 3.125; // 50
 $font-size-xl: 7.5rem; // 120
 
-
 $font-size-base: $font-size-xs;
+
+$h-sizes: (
+  md: 2.5rem,
+  lg: 3.125rem,
+  xl: 7.5rem,
+);
+
+$p-sizes: (
+  xs: 1.375rem,
+  sm: 1.875rem,
+);
+
 
 
 // --------------------------------------------------------
@@ -48,19 +59,16 @@ $font-weight-base: $font-weight-normal;
 
 $font-color-base: $primary-color;
 
-
 $heading-font-size-base: $font-size-md;
 $heading-font-size-weight: $font-weight-base;
 
-$line-height-base: 1.25;
+$line-height-base: 1;
 
 // --------------------------------------------------------
 //  Border
 // --------------------------------------------------------
 $border-type-base: 1px solid;
-$border-color-base:  $primary-color;
-
-
+$border-color-base: $primary-color;
 
 // --------------------------------------------------------
 //  Border Radius
@@ -89,27 +97,26 @@ $breakpoints: (
 // --------------------------------------------------------
 //  Ga
 // --------------------------------------------------------
-$gap-xs: 1rem; 
+$gap-xs: 1rem;
 $gap-sm: 2rem;
 $gap-md: 4rem;
 $gap-lg: 6rem;
 
-
 // --------------------------------------------------------
 //  Margins
 // --------------------------------------------------------
-$margin-xs: 0.5rem; 
+$margin-xs: 0.5rem;
 $margin-sm: 1rem;
-$margin-md: 1.5em;
+$margin-md: 1.5rem;
 $margin-lg: 2rem;
 $margin-no: 0;
 
 // --------------------------------------------------------
 //  Padding
 // --------------------------------------------------------
-$padding-xs: 0.5rem; 
+$padding-xs: 0.5rem;
 $padding-sm: 1rem;
-$padding-md: 1.5em;
+$padding-md: 1.5rem;
 $padding-lg: 2rem;
 $padding-no: 0;
 

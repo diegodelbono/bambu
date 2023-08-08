@@ -1,15 +1,15 @@
-import React from "react";
-import { Article, Loading, Image, Slider, Summary } from "../../components";
+import React, { useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { Loading, Image, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 
 const Insumos = () => {
-	const { data, isLoading } = useApiData("insumos");
+	const [params] = useSearchParams();
+    const { data, isLoading } = useApiData(params.get("s"));
 
 	if (isLoading) {
 		return <Loading />;
 	}
-
-	{ console.log("isimos", data) }
 
 	return (
 		<>
@@ -18,17 +18,20 @@ const Insumos = () => {
 				<main className="main">
 					<div className="main__container container">
 						<Summary data={data.acf.summary} />
-						<h2>{data.acf.products.title}</h2>
-						<div className="grid">
-							{data.acf.products.product.map(({ img, summary, title }, index) => (
-								<div class="grid__col" key={index}>
-									<div className="product">
-										<Image id={img} />
-										<p><strong>{title}</strong></p>
-										{summary}
+						<div className="products">
+							<h2>{data.acf.products.title}</h2>
+							<div className="grid">
+								{data.acf.products.product.map(({ img, summary, title }, index) => (
+									<div className="grid__col" key={index}>
+										<div className="product">
+											<Image id={img.url} />
+											<p><strong>{title}</strong></p>
+											<p>{summary}</p>
+											<Link to="/" className="button">Contactar</Link>
+										</div>
 									</div>
-								</div>
-							))}
+								))}
+							</div>
 						</div>
 					</div>
 				</main>

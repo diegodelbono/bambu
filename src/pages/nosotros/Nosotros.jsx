@@ -1,20 +1,17 @@
 import React from "react";
-import { About, Accordion, Loading, Image, Slider, Summary } from "../../components";
+import { About, Accordion, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
+import { useSearchParams } from "react-router-dom";
 
 const Nosotros = () => {
-	const { data, isLoading } = useApiData("nosotros");
-
-	{ console.log("data en nosotros", data) }
-
-	if (isLoading) {
-		return <Loading />;
-	}
+	
+	const [params] = useSearchParams();
+    const { data, isLoading } = useApiData(params.get("s"));
 
 	return (
 		<>
 			{data && <>
-				<Slider data={data.acf.slide} />
+				<Slider data={data.acf.slide} loading={isLoading} />
 				<main className="main">
 					<div className="main__container container">
 						<Summary data={data.acf.summary} />

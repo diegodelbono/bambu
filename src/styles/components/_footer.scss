@@ -1,11 +1,14 @@
 .footer {
   background-color: $color-bg-base;
   position: relative;
+  z-index: 2;
 
   &__container {
     border-top: $border-type-base $border-color-base;
     display: flex;
-    gap: $gap-md;   
+
+    @include grid($gap-md);
+    gap: $gap-md;
     padding: $padding-lg $padding-no;
   }
 
@@ -13,11 +16,23 @@
     &--end {
       margin-right: 0;
       margin-left: auto;
+
+      @include breakpoint(md) {
+        margin: 0;
+      }
     }
   }
 
   &__menu {
     display: flex;
     flex-direction: column;
-  }  
+  }
+
+  .copy {
+    margin-top: 10rem;
+
+    @include breakpoint(md) {
+      margin: 2rem 0;
+    }
+  }
 }

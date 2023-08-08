@@ -1,11 +1,7 @@
-import { Button, Image } from "../../components";
+import { Image } from "../../components";
 
 const About = ({ data }) => {
-
-  console.log("data en summary", data)
-
   const { resume, photo } = data;
-  // console.log("slideHome", slideHome)
 
   return (
     <div className="grid">

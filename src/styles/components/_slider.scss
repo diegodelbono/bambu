@@ -1,14 +1,17 @@
 .slider {
   @include position-sticky;
-
-  &__content {
-    @include absolute-center;
-  }
+  background-size: cover !important;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__caption {
     position: relative;
     margin: 4rem 0;
     z-index: 2;
+    border: 2px solid red;
+    width: 50%;
 
     h2 {
       color: white;
@@ -16,6 +19,7 @@
       line-height: 1;
     }
   }
+
   @include breakpoint(md) {
     display: none;
   }
