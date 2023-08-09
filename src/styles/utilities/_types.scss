@@ -4,14 +4,14 @@
 
 
 h1, h2, h3 {
-    font-size: $heading-font-size-base;
+    //font-size: $heading-font-size-base;
     font-weight: $heading-font-size-weight;
     margin-bottom: 1rem;
 }
 
-h3 {
-    font-size: 30px;
-}
+// h3 {
+//     font-size: 30px;
+// }
 
 
 a {
@@ -27,9 +27,9 @@ p {
     color: white;
 }
 
-.font-size-md {
-    font-size: $font-size-md;
-}
+// .font-size-md {
+//     font-size: $font-size-md;
+// }
 
 
 // h-large

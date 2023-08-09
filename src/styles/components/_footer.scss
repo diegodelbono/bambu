@@ -10,6 +10,10 @@
     @include grid($gap-md);
     gap: $gap-md;
     padding: $padding-lg $padding-no;
+
+    @include breakpoint(md) {
+      gap: 1rem;
+    }
   }
 
   &__col {
@@ -21,6 +25,11 @@
         margin: 0;
       }
     }
+  }
+
+  .logo {
+   // border: 3px solid red;
+    width: 4rem;
   }
 
   &__menu {

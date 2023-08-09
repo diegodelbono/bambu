@@ -18,17 +18,28 @@ img {
   z-index: 3;
 }
 
-.logo {
-  width: 12.5rem;
-}
-.imago {
-  width: 2.5rem;
-}
 
 .figure,
 figure {
   border-radius: $border-radius-sm;
   overflow: hidden;
+  //border: 2px solid blue;
+  position: relative;
+
+  .video {
+    display: none;
+   // border: 2px solid red;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &:hover {
+    .video {
+      display: block;
+    }
+  }
 }
 
 .group-link {
@@ -46,7 +57,7 @@ figure {
 .products {
   margin-bottom: 8rem;
   h2 {
-    margin-bottom: 5.5rem;
+    margin-bottom: 3rem;
   }
 
   .product {

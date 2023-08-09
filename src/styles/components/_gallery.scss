@@ -1,0 +1,13 @@
+.gallery {
+  //border: 2px solid red;
+  position: relative;
+
+  &__item {
+    //border: 2px solid blue;
+
+    .figure {
+      border-radius: 0;
+    }
+    //position: absolute;
+  }
+}

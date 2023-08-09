@@ -6,14 +6,14 @@ const Article = ({ data }) => {
     return (
         <article className="article">
             <div className="article__col">
-                <h3>{title}</h3>
+                <h3 className="h-small">{title}</h3>
             </div>
             <div className="article__col">
                 <div className="article__figure">
                     <Image id={img.url} />
                 </div>
                 <div className="article__summary">
-                    <p>{description}</p>
+                    <p className="p-small">{description}</p>
                     <Button data={button} />
                 </div>
             </div>

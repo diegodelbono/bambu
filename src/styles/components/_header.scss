@@ -1,10 +1,44 @@
 .header {
   @include position-sticky;
   z-index: 10;
-  padding: 4rem $padding-no;
+  padding: 4rem 2rem;
+  //border: 2px solid red;
 
   &__container {
     display: flex;
     justify-content: space-between;
   }
+
+  @include breakpoint(md) {
+    padding: 2rem;
+    border: 3px solid blue;
+  }
 }
+
+
+.logo {
+ // border: 2px solid orange;
+  background: url("../../assets/Bambu-logo.svg") no-repeat left top;
+  height: 5rem;
+  width: 15rem;
+
+  @include breakpoint(md) {
+    height: 3rem;
+    width: 10rem;
+    border: 2px solid red;
+  }
+
+
+  &-imago {
+   // border: 2px solid red;
+    background: url("../../assets/Bambu-imago.svg") no-repeat left top;
+  }
+}
+
+
+// .logo {
+//   width: 12.5rem;
+// }
+// .imago {
+//   width: 2.5rem;
+// }

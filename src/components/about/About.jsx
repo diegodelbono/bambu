@@ -6,10 +6,10 @@ const About = ({ data }) => {
   return (
     <div className="grid">
       <div className="grid__col">
-        <div dangerouslySetInnerHTML={{ __html: resume }} />
+        <div className="p-medium" dangerouslySetInnerHTML={{ __html: resume }} />
       </div>
       <div className="grid__col">
-        <Image id={photo} />
+        <Image id={photo.url} />
       </div>
     </div>
   );

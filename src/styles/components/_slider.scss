@@ -1,7 +1,7 @@
 .slider {
   @include position-sticky;
   background-size: cover !important;
-  height: 70vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,17 +10,19 @@
     position: relative;
     margin: 4rem 0;
     z-index: 2;
-    border: 2px solid red;
+   // border: 2px solid red;
     width: 50%;
 
-    h2 {
-      color: white;
-      font-size: $font-size-lg;
-      line-height: 1;
-    }
+    // h2 {
+    //   color: white;
+    //  // font-size: $font-size-lg;
+    //   line-height: 1;
+    // }
   }
 
   @include breakpoint(md) {
+    //display: none;
     display: none;
+    height: 50vh;
   }
 }

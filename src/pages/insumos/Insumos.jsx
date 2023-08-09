@@ -25,8 +25,8 @@ const Insumos = () => {
 									<div className="grid__col" key={index}>
 										<div className="product">
 											<Image id={img.url} />
-											<p><strong>{title}</strong></p>
-											<p>{summary}</p>
+											<p className="p-small"><strong>{title}</strong></p>
+											<p className="p-small">{summary}</p>
 											<Link to="/" className="button">Contactar</Link>
 										</div>
 									</div>

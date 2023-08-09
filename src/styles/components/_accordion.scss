@@ -1,5 +1,5 @@
 .accordion {
-  margin: 2rem 0;
+  margin: 6rem 0;
 
   &__item {
     margin-bottom: 3rem;
@@ -7,11 +7,68 @@
   }
 
   &__title {
+    cursor: pointer;
+
+    .i {
+      //border: 2px solid blue;
+      
+      height: 2rem;
+      width: 2rem;
+      margin-left: auto;
+
+      &--plus {
+        background-image: url("../../assets/icons/i-plus.svg");
+      }
+      &--minus {
+        background-image: url("../../assets/icons/i-minus.svg");
+      }
+     
+    }
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     * {
       margin: 0;
     }
   }
+
+  &__col {
+   // border: 2px solid red;
+    width: 50%;
+
+    img {
+      border-radius: $border-radius-base;
+      overflow: hidden;
+    }
+  }
+}
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+
+
+.gallery-item {
+  opacity: 0;
 }

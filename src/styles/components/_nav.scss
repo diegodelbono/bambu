@@ -12,7 +12,45 @@
     }
   }
 
-  @include breakpoint(md) {
-    display: none;
+  &__button {
+    background: darken($primary-color, 20%);
+    //border: 2px solid red;
+    border-radius: 100%;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    z-index: 1000;
   }
+
+  @include breakpoint(md) {
+    background-color: $primary-color;
+    display: none;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 4rem 0;
+    width: 100%;
+    flex-direction: column;
+
+    &__item {
+      color: white;
+        font-size: $font-size-lg;
+    }
+    //display: none;
+  }
+}
+
+
+/* Agrega estilos para mostrar el menú */
+
+
+/* Estilos iniciales para ocultar el menú */
+// .nav {
+//   display: none;
+// }
+.nav--visible {
+  display: flex;
 }

@@ -8,9 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer__container">
                     <div className="footer__col">
-                        <div className="imago">
-                            <img src={Logo} />
-                        </div>
+                        <div className="logo logo-imago" />
                     </div>
                     <div className="footer__col">
                         <div className="footer__menu">
