@@ -23,6 +23,11 @@
     }
   }
 
+  .logo {
+   // border: 3px solid red;
+    width: 4rem;
+  }
+
   &__menu {
     display: flex;
     flex-direction: column;

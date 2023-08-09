@@ -3,6 +3,7 @@ export { About } from "./about";
 export { Accordion } from "./accordion";
 export { Article } from "./article";
 export { Button } from "./button";
+export { Gallery } from "./gallery";
 export { Header } from "./header";
 export { Loading } from "./loading";
 export { Image } from "./image";

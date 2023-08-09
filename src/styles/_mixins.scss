@@ -32,16 +32,22 @@
 
 @each $size, $value in $p-sizes {
   .p-#{$size} {
-    border: 3px solid pink;
     font-size: $value;
-    //@include font-size('p', $size);
+
+    @include breakpoint(md) {
+      font-size: calc($value/1.5);
+    }
+    //@include font-size('p', $size);at
   }
 }
 
 @each $size, $value in $h-sizes {
   .h-#{$size} {
-    border: 3px solid pink;
     font-size: $value;
+
+    @include breakpoint(md) {
+      font-size: calc($value/1.5);
+    }
     //@include font-size('p', $size);
   }
 }

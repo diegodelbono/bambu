@@ -23,21 +23,21 @@ const Bambu = () => {
 						<Summary data={data.acf.summary} />
 
 						<div className="products">
-							<h2>{data.acf.species.title}</h2>
+							<h2 className="h-medium">{data.acf.species.title}</h2>
 							<div className="grid grid--col-4">
 								{data.acf.species.spice.map(({ image, summary, title }, index) => (
 									<div className="grid__col" key={index}>
 										<div className="product">
 											<Image id={image.url} />
-											<p><strong>{title}</strong></p>
-											<p>{summary}</p>
-											<Link to="/" className="button">Contactar</Link>
+											<p className="p-small"><strong>{title}</strong></p>
+											<p className="p-small">{summary}</p>
+											{/* <Link to="/" className="button">Contactar</Link> */}
 										</div>
 									</div>
 								))}
 							</div>
 						</div>						
-						<h2>Preguntas frecuentes</h2>
+						<h2 className="h-medium">Preguntas frecuentes</h2>
 						<Accordion data={data.acf.accordion} />
 					</div>
 				</main>

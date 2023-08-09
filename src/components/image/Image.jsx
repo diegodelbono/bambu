@@ -2,9 +2,16 @@ import { useEffect, useState } from "react";
 
 const Image = ({ id }) => {
 
+	
+
 	return (
 		<>{id &&
 			<figure className="figure">
+				<div className="video">
+					{/* <video autoPlay loop muted playsInline>
+						<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" autoplay />
+					</video> */}
+				</div>
 				<img src={id} alt="Imagen desde API"/>
 			</figure>}
 		</>
