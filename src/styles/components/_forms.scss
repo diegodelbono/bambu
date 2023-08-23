@@ -1,0 +1,26 @@
+.form {
+  //border: 2px solid red;
+
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__input {
+    background: transparent;
+    border: none;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__textarea {
+    height: 10rem;
+  }
+}

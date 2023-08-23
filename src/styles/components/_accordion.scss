@@ -1,74 +1,61 @@
 .accordion {
-  margin: 6rem 0;
+  margin: $margin-lg $margin-no;
 
-  &__item {
-    margin-bottom: 3rem;
-    @include grid(2rem);
+  @include breakpoint(md) {
+    margin: $margin-sm $margin-no;
   }
 
-  &__title {
-    cursor: pointer;
-
-    .i {
-      //border: 2px solid blue;
-      
-      height: 2rem;
-      width: 2rem;
-      margin-left: auto;
-
-      &--plus {
-        background-image: url("../../assets/icons/i-plus.svg");
-      }
-      &--minus {
-        background-image: url("../../assets/icons/i-minus.svg");
-      }
-     
-    }
-
+  &__item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: $gap-base;
+    margin-bottom: $margin-md;
 
-    * {
-      margin: 0;
+    @include breakpoint(md) {
+      gap: 1rem;
+      flex-direction: column;
+      margin-bottom: $margin-xs;
+
+      h2 {
+        margin: 0;
+      }
     }
   }
 
   &__col {
-   // border: 2px solid red;
-    width: 50%;
+    flex: 1;
 
     img {
       border-radius: $border-radius-base;
       overflow: hidden;
     }
+
+    @include breakpoint(md) {
+      width: 100%;
+    }
   }
-}
 
+  &__title {
+    display: flex;
 
-html.lenis {
-  height: auto;
-}
+    .icon {
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      height: 2rem;
+      width: 2rem;
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
+      &--plus {
+        background-image: url("../../assets/icons/i-plus.svg");
+      }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
+      &--minus {
+        background-image: url("../../assets/icons/i-minus.svg");
+      }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
-
-
-
-.gallery-item {
-  opacity: 0;
+      @include breakpoint(lg) {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
 }

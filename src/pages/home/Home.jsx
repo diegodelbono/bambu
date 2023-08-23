@@ -1,68 +1,72 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Article, Gallery, Loading, Slider, Summary } from "../../components";
+import { Gallery, Loading, News, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
+import { useGroupLink } from "../../utils/animations";
 
 const Home = () => {
-    const { data, isLoading } = useApiData("home");
+  const { data, isLoading } = useApiData("home");
+  const groupLink = useRef(null);
+  useGroupLink(groupLink);
 
-    if (isLoading) {
-        return <Loading />;
-    }
+  if (isLoading) {
+    return <Loading />;
+  }
 
-    return (
+  return (
+    <>
+      {data && (
         <>
-            {data && <>
+          <Slider data={data.acf.slide} slideHome />
 
-                <Slider data={data.acf.slide} />
+          <div className="container">
+            <div className="slider__caption">
+              <h2 className="h-medium text-white">
+                Somos un vivero especializado <br />
+                en la producción y venta de <br />
+                plantas de bambú en Uruguay.
+              </h2>
+            </div>
+          </div>
 
-                {/* <video>
-                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" />
-                </video> */}
-
-
-                <div className="container">
-                    <div className="slider__caption">
-                        <h2 className="h-medium text-white">Somos un vivero especializado en la producción y venta de plantas de bambú en Uruguay.</h2>
-                    </div>
+          <main className="main">
+            <div className="main__container">
+              <div className="container">
+                <div className="group-link" ref={groupLink}>
+                  <div className="group-link__item">
+                    <Link to="/plantas?s=plantas#paisajismo" className="button button--big">
+                      Paisajismo
+                    </Link>
+                  </div>
+                  <div className="group-link__item">
+                    <Link to="/plantas?s=plantas#agro" className="button button--big">
+                      Agro
+                    </Link>
+                  </div>
+                  <div className="group-link__item">
+                    <Link to="/plantas?s=plantas#proyectosproductivos" className="button button--big">
+                      Proyectos productivos
+                    </Link>
+                  </div>
+                  <div className="group-link__item">
+                    <Link to="/plantas?s=plantas#medioambiente" className="button button--big">
+                      Medio ambiente
+                    </Link>
+                  </div>
                 </div>
-
-                <main className="main">
-                    <div className="main__container">
-
-                        <div className="container">
-
-                            <div className="group-link">
-                                <div className="group-link__item">
-                                    <Link to="/paisajismo" className="button button--big">Paisajismo</Link>
-                                </div>
-                                <div className="group-link__item">
-                                    <Link to="/paisajismo" className="button button--big">Agro</Link>
-                                </div>
-                                <div className="group-link__item">
-                                    <Link to="/paisajismo" className="button button--big">Proyectos productivos</Link>
-                                </div>
-                                <div className="group-link__item">
-                                    <Link to="/paisajismo" className="button button--big">Medio ambiente</Link>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        {console.log("data gallery", data.acf.gallery)}
-
-                        <Gallery data={data.acf.gallery} />
-
-                        <div className="container">
-                            <Summary data={data.acf.summary} />
-                        </div>
-
-                    </div>
-                </main>
-            </>}
+              </div>
+              <Gallery data={data.acf.gallery} />
+              <div className="container">
+                <Summary data={data.acf.summary} />
+                <News />
+              </div>
+            </div>
+          </main>
         </>
-    );
+      )
+      }
+    </>
+  );
 };
 
 export default Home;

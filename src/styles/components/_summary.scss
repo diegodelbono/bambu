@@ -1,16 +1,20 @@
 .summary {
-  @include grid(1rem);
-  justify-content: flex-end;
-  margin: 7rem $margin-no;
+  display: flex;
+  gap: $gap-base;
+  margin: $margin-lg $margin-no;
 
   @include breakpoint(md) {
-    margin: 2rem 0 6rem 0;
- //   border: 2px solid red;
+    flex-direction: column;
+    gap: 0;
+    margin: $margin-md $margin-no;
   }
 
   &__col {
-  //  border: 2px solid red;
-    flex: 0 0 50%;
-   // width: 50%;
+    margin-left: auto;
+    flex: 0 0 calc(50% - ($gap-base/2));
+
+    @include breakpoint(md) {
+      margin-left: 0;
+    }
   }
 }

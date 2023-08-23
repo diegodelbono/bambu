@@ -1,34 +1,37 @@
 body {
   background-color: $grey-bg;
+  color: $font-color-base;
   font-family: $font-family-primary;
   font-weight: $font-weight-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
+
+  @include breakpoint(lg) {
+    font-size: $font-size-xs-m;
+  }
 }
 
 img {
+  height: auto;
   display: block;
   width: 100%;
 }
 
 .main {
-  padding: 2rem 0;
+  overflow: auto;
   background-color: $grey-bg;
   position: relative;
-  z-index: 3;
+  z-index: 15;
 }
-
 
 .figure,
 figure {
   border-radius: $border-radius-sm;
   overflow: hidden;
-  //border: 2px solid blue;
   position: relative;
 
   .video {
     display: none;
-   // border: 2px solid red;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -42,30 +45,77 @@ figure {
   }
 }
 
+// Group link
 .group-link {
-  margin: 6.25rem 0 6.25rem -2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: $margin-lg $margin-no;
 
-  @include breakpoint(md) {
-    margin: 2rem 0;
+  @include breakpoint(lg) {
+    gap: $gap-xs;
+    margin: $margin-md $margin-no;
   }
 
   &__item {
-    margin-bottom: 1rem;
+    margin-left: -$margin-sm;
+
+    @include breakpoint(lg) {
+      margin: $margin-no;
+    }
   }
 }
 
 .products {
   margin-bottom: 8rem;
+  @include breakpoint(md) {
+    margin-bottom: 2rem;
+  }
+
   h2 {
     margin-bottom: 3rem;
+
+    @include breakpoint(md) {
+      margin-bottom: 1rem;
+    }
   }
 
   .product {
     .figure {
       margin-bottom: 2rem;
     }
+
     .button {
       margin-top: 1rem;
     }
+
+    @include breakpoint(md) {
+      .figure {
+        margin-bottom: 1rem;
+      }
+
+      margin-bottom: 1rem;
+      .button {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.imgs {
+  border-radius: $border-radius-sm;
+  height: 12rem;
+  background-color: white;
+  width: 100%;
+}
+
+.body-fixed {
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  @include breakpoint(lg) {
+    padding-top: 5rem;
   }
 }

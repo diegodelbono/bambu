@@ -1,47 +1,31 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useRef } from "react";
+import { arrayOf, shape } from "prop-types";
+import { useSlideAnimation, useSlideTitleAnimation } from "../../utils/animations";
 
-const Slider = ({ data }) => {
-  const { title, background } = data;
-
+const Slider = ({ data, slideHome }) => {
+  const { title, background, video } = data;
   const slideRef = useRef(null);
+  const slideTitleRef = useRef(null);
 
-  useEffect(() => {
-    const slideElement = slideRef.current;
 
-    // Crear una instancia de GSAP timeline
-    const tl = gsap.timeline();
-
-    // let heroTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".hero-component",
-    //     start: "top top",
-    //     end: "bottom center",
-    //     ease: "none",
-    //     endTrigger: ".hero-content",
-    //     scrub: true
-    //   }
-    // });
-    // heroTl.to(".home-hero_overlay", {
-    //   opacity: 1,
-    //   duration: 1
-    // });
-
-    // Definir la animación
-    tl.fromTo(
-      slideElement,
-      { opacity: 0, y: 100 }, // Estado inicial: opacidad 0 y posición y a 100px
-      { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' } // Estado final: opacidad 1, posición y a 0, duración de 1.5 segundos
-    );
-  }, []);
+  useSlideAnimation(slideRef);
+  useSlideTitleAnimation(slideTitleRef);
 
   return (
-    <div className="slider" ref={slideRef} style={{ background: `url(${background})` }}>
-      <div className="slider__content">
-        <h1 className="h-medium text-white">{title}</h1>
-      </div>
+    <div ref={slideRef} className={`slider bg-color ${slideHome ? "slider--home" : ""}`} style={{ background: `url(${background})` }}>
+      <h1 className="h-medium text-white" ref={slideTitleRef}>
+        {title}
+      </h1>
+      {
+        video && (
+          <video className="slider__video" autoPlay loop muted playsInline>
+            <source src={video.url} type="video/mp4" />
+          </video>
+        )
+      }
     </div>
   );
 };
+
 
 export default Slider;

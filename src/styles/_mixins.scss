@@ -25,52 +25,47 @@
 // Breakpoint
 @mixin breakpoint($breakpoint-size) {
   $breakpoint-value: map-get($breakpoints, $breakpoint-size);
+
   @media only screen and (max-width: $breakpoint-value) {
     @content;
   }
 }
 
-@each $size, $value in $p-sizes {
+@each $size,
+$value in $p-sizes {
   .p-#{$size} {
     font-size: $value;
-
-    // @include breakpoint(md) {
-    //   font-size: calc($value/1.5);
-    // }
-    //@include font-size('p', $size);at
   }
 }
 
-@each $size, $value in $h-sizes {
+@each $size,
+$value in $p-sizes-mobile {
+  @include breakpoint(lg) {
+    .p-#{$size} {
+      font-size: $value;
+    }
+  }
+}
+
+@each $size,
+$value in $h-sizes {
   .h-#{$size} {
     font-size: $value;
-
-    @include breakpoint(md) {
-      font-size: calc($value/1.5);
-    }
-    //@include font-size('p', $size);
+    line-height: 1.2;
   }
 }
 
-// // Fonts
-// @mixin p-sizes {
-//   @each $size, $value in $p-sizes {
-//     .p-#{$size} {
-//       font-size: $value;
-//     }
-//   }
-// }
-
-// @mixin h-sizes {
-//   @each $size, $value in $h-sizes {
-//     .h-#{$size} {
-//       font-size: $value;
-//     }
-//   }
-// }
+@each $size,
+$value in $h-sizes-mobile {
+  .h-#{$size} {
+    @include breakpoint(md) {
+      font-size: $value;
+    }
+  }
+}
 
 // Gap
-@mixin grid($gap){
+@mixin grid($gap) {
   display: flex;
   gap: $gap;
 
@@ -81,4 +76,23 @@
   @include breakpoint(md) {
     flex-direction: column;
   }
+}
+
+// Transform
+@mixin transform($value) {
+  transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -webkit-transform: $value;
+}
+
+// Position
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  height: $height;
+  width: $width;
 }

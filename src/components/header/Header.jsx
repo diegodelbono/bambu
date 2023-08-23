@@ -1,72 +1,94 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Nav } from "../nav";
-import Logo from '../../assets/Bambu-logo.svg';
-import Imago from "../../assets/Bambu-imago.svg";
-import gsap from 'gsap';
-
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useLogoAnimation } from "../../utils/animations";
 
 const Header = () => {
-    const logoRef = useRef(null);
+  const [navOpen, setNavOpen] = useState(false);
+  const logoRef = useRef(null);
+  useLogoAnimation(logoRef);
 
-    useEffect(() => {
-        const logo = logoRef.current;
+  const body = document.body;
 
-        const handleScroll = () => {
-            if (window.scrollY < 100) {
-                logo.classList.remove('logo-imago'); // Quitar la clase al volver a la posición inicial
-            } else {
-                logo.classList.add('logo-imago');
-            }
-        };
+  const toggleNav = () => {
+    setNavOpen(!navOpen);
+  };
 
-        window.addEventListener('scroll', handleScroll);
+  if (navOpen) {
+    body.classList.add("body-fixed");
+  } else {
+    body.classList.remove("body-fixed");
+  }
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+  const closeNav = () => {
+    setNavOpen(false);
+  };
 
-    useEffect(() => {
-        const logo = logoRef.current;
+  const [overlappingDivs, setOverlappingDivs] = useState([]);
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.logo-container',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-                // duration: 10,
-            },
-        });
+  useEffect(() => {
+    const handleScroll = () => {
+      const logo = document.querySelector(".logo");
+      const main = document.querySelector(".main");
+      const divsToCheck = document.querySelectorAll(".bg-color");
+      const slider = document.querySelector(".slider");
 
-        tl.to(logo, { width: "3rem", transformOrigin: 'top left', });
-    }, []);
+      const overlappingDivs = [];
 
-    return (
-        <header className="header">
-            <div className="header__container">
-                <div className="header__item">
-                    <Link to="home">
-                        <div className="logo-container">
-                            <div ref={logoRef} className="logo">
-                                {/* <img src={Logo} alt="Logo" /> */}
-                            </div>
-                            {/* <div className="imago">
-                <img src={Imago} alt="Imago" />
-              </div> */}
-                        </div>
-                    </Link>
-                </div>
-                <div className="header__item">
-                    <Nav />
-                </div>
-            </div>
-        </header>
-    );
+      divsToCheck.forEach((div) => {
+        const logoRect = logo.getBoundingClientRect();
+        const divRect = div.getBoundingClientRect();
+        const mainRect = main.getBoundingClientRect();
+
+        if (mainRect.top <= 0) {
+          slider.classList.add("slider--relative");
+        } else {
+          slider.classList.remove("slider--relative");
+        }
+
+        if (logoRect.bottom > divRect.top && logoRect.top < divRect.bottom) {
+          overlappingDivs.push(div.id);
+        }
+      });
+
+      setOverlappingDivs(overlappingDivs);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <header className={`header ${navOpen ? "header--expand" : ""} ${overlappingDivs.length > 0 ? "header--overlay" : ""}`}>
+      <div className="header__container container">
+        <Link to="/">
+          <div id="logo" className="logo" ref={logoRef} />
+        </Link>
+        <Nav isOpen={navOpen} onCloseNav={closeNav} />
+        <div className="nav--toggle" onClick={toggleNav}>
+          <div className={`nav-icon ${navOpen ? "nav-icon--active" : ""}`}>
+            <div className="nav-icon--line" />
+            <div className="nav-icon--line" />
+          </div>
+        </div>
+        <div className="header__footer">
+          <Link to="/">Whatsapp</Link>
+          <a href="https://www.instagram.com/bambu_del_este" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/BambudelEsteUruguay/" target="_blank">Facebook</a>
+
+          <div className="header__footer--end">
+            <a href="mailto:vivero@bambudeleste.com.uy">vivero@bambudeleste.com.uy</a>
+            <span>+598 98 46 47 48</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="header__bg" />
+    </header>
+  );
 };
 
 export default Header;

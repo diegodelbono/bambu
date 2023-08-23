@@ -1,9 +1,11 @@
 .button {
   @include transition(all 0.5s ease);
+  background-color: transparent;
   border-radius: $border-radius-base;
   border: $border-type-base $border-color-base;
   color: $primary-color;
   cursor: pointer;
+  font-size: $font-size-xs;
   display: inline-block;
   padding: $padding-xs $padding-md;
   line-height: 1;
@@ -14,22 +16,36 @@
     color: white;
   }
 
+  @include breakpoint(lg) {
+    font-size: $font-size-xs-m;
+    padding: $padding-xs 1rem;
+  }
+
+  &--lg {
+    font-size: $font-size-md;
+    border-radius: 3rem;
+
+    @include breakpoint(lg) {
+      font-size: $font-size-md-m;
+    }
+  }
+
   &--big {
     border-radius: 5rem;
     font-size: $font-size-xl;
     padding: 0.25rem 1.5rem;
-    border: $border-type-base transparent;
+    border: 2px solid transparent;
 
     &:hover,
     &:focus {
       background-color: transparent;
-      border: $border-type-base $border-color-base;
+      border-color: $border-color-base;
       color: $primary-color;
     }
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       font-size: $font-size-sm;
-      //display: none;
+      padding: 0;
     }
   }
 }

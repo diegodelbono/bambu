@@ -1,7 +1,11 @@
 .container {
   margin: 0 auto;
-  max-width: 1300px;
-  padding: $padding-no $padding-lg;
+  max-width: 90rem;
+  padding: $padding-no 4rem;
+
+  @include breakpoint(lg) {
+    padding: 0 2rem;
+  }
 }
 
 .grid {
@@ -13,6 +17,10 @@
 
     .grid__col {
       width: 100%;
+    }
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

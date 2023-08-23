@@ -1,0 +1,13 @@
+.about {
+  display: flex;
+  margin: $margin-lg $margin-no;
+
+  @include breakpoint(md) {
+    flex-direction: column;
+    margin: $margin-md $margin-no;
+  }
+
+  &__col {
+    flex: 1;
+  }
+}

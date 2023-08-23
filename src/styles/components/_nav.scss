@@ -9,48 +9,76 @@
 
     &.active {
       border-color: $primary-color;
-    }
-  }
 
-  &__button {
-    background: darken($primary-color, 20%);
-    //border: 2px solid red;
-    border-radius: 100%;
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    z-index: 1000;
+      @include breakpoint(md) {
+        border: none;
+        padding: 0.25rem 0;
+      }
+    }
+
+    @include breakpoint(lg) {
+      font-size: 32px;
+      line-height: 1;
+    }
   }
 
   @include breakpoint(md) {
-    background-color: $primary-color;
     display: none;
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    padding: 4rem 0;
-    width: 100%;
-    flex-direction: column;
+  }
 
-    &__item {
-      color: white;
-        font-size: $font-size-lg;
-    }
-    //display: none;
+  &--expand {
+    display: block;
+  }
+
+  &--toggle {
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
   }
 }
 
+.nav-icon {
+  display: none;
+  height: 2rem;
+  position: relative;
+  width: 3rem;
 
-/* Agrega estilos para mostrar el menú */
+  @include breakpoint(md) {
+    display: block;
+  }
 
+  &--line {
+    background-color: $primary-color;
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    @include transform(rotate(0deg));
+    @include transition(all 0.25s ease);
+    @include position(absolute, $top: 0, $left: 0, $height: 1px, $width: 100%);
 
-/* Estilos iniciales para ocultar el menú */
-// .nav {
-//   display: none;
-// }
-.nav--visible {
-  display: flex;
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2) {
+      top: 12px;
+    }
+  }
+
+  &--active {
+    .nav-icon--line {
+      background-color: white;
+
+      &:nth-child(1) {
+        @include transform(rotate(45deg));
+        top: 12px;
+      }
+
+      &:nth-child(2) {
+        @include transform(rotate(-45deg));
+        top: 12px;
+      }
+    }
+  }
 }

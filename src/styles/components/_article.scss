@@ -1,23 +1,51 @@
 .article {
-  @include grid(1rem);
-  margin-bottom: 9rem;
-  
-  &__figure {
-    margin-bottom: $margin-lg;
-  }
-
-  .button {
-    margin-top: 2rem;
-  }
+  display: flex;
+  gap: $gap-base;
+  margin-bottom: $margin-lg;
 
   @include breakpoint(md) {
-    margin: 2rem 0 4rem 0;
-   // border: 2px solid green;
+    gap: $gap-no;
+    flex-direction: column;
+    margin-bottom: $margin-md;
+  }
 
-    .button {
-      margin-top: 1rem;
+  &__summary {
+    margin: $margin-sm $margin-no;
+
+    @include breakpoint(md) {
+      margin: $margin-xs $margin-no;
     }
-    //border: 2px solid orange;
+  }
+
+  &__figure {
+    border-radius: $border-radius-base;
+    position: relative;
+    overflow: hidden;
+
+    &--hover {
+      @include transition(all 0.5s ease);
+      position: absolute;
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+    }
+
+    &:hover,
+    &:focus {
+      .article__figure--hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__video {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  &__col {
+    flex: 1;
   }
 }
-

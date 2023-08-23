@@ -1,7 +1,13 @@
 .footer {
   background-color: $color-bg-base;
   position: relative;
-  z-index: 2;
+  margin-top: 6rem;
+  z-index: 10;
+
+  @include breakpoint(md) {
+    margin-top: 3rem;
+    font-size: $font-size-md-m;
+  }
 
   &__container {
     border-top: $border-type-base $border-color-base;
@@ -11,8 +17,29 @@
     gap: $gap-md;
     padding: $padding-lg $padding-no;
 
+    @include breakpoint(sm) {
+      gap: 2rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    .copy {
+      margin-top: 10rem;
+    }
+
     @include breakpoint(md) {
-      gap: 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 5rem;
+      font-size: $font-size-xs-m;
+
+      .copy {
+        margin: 0;
+      }
     }
   }
 
@@ -28,20 +55,16 @@
   }
 
   .logo {
-   // border: 3px solid red;
-    width: 4rem;
+    width: 2.25rem;
+
+    @include breakpoint(md) {
+      width: 1.5rem;
+    }
   }
 
   &__menu {
     display: flex;
     flex-direction: column;
-  }
-
-  .copy {
-    margin-top: 10rem;
-
-    @include breakpoint(md) {
-      margin: 2rem 0;
-    }
+    gap: 0.25rem;
   }
 }
