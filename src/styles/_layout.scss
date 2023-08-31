@@ -68,6 +68,7 @@ figure {
 
 .products {
   margin-bottom: 8rem;
+
   @include breakpoint(md) {
     margin-bottom: 2rem;
   }
@@ -85,6 +86,29 @@ figure {
       margin-bottom: 2rem;
     }
 
+    &__figure {
+      position: relative;
+      overflow: hidden;
+
+      &--hover {
+        @include transition(all 0.5s ease);
+        position: absolute;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .product__figure--hover {
+        opacity: 1;
+      }
+    }
+
+
+
     .button {
       margin-top: 1rem;
     }
@@ -95,6 +119,7 @@ figure {
       }
 
       margin-bottom: 1rem;
+
       .button {
         margin-top: 0;
       }
@@ -118,4 +143,9 @@ body {
   @include breakpoint(lg) {
     padding-top: 5rem;
   }
+}
+
+
+.loading {
+  display: none;
 }

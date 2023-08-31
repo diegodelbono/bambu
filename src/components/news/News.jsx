@@ -1,25 +1,9 @@
 import React, { useState, useEffect } from "react";
 import OwlCarousel from "react-owl-carousel";
 import axios from "axios";
+import { Image } from "../image";
 
-const News = () => {
-
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const accessToken = 'IGQWRPNUtleG1uTDJMSmJXZAVZAnOWxmLXIxR01mVVVyZAWtrYVhsd3FSaDhEby1YUm50YmJ4a3pHdUI0eE9RZA081YkFBbE8xa3cwZA1BSRFJfOWVrcUpnd1A0Qks0eEhqdWNQWGlpdks4Y2M5bWJFaE5vaFZAIMWRjSE0ZD';
-    const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&access_token=${accessToken}`;
-
-    axios.get(apiUrl)
-      .then(response => {
-        setPosts(response.data.data);
-      })
-      .catch(error => {
-        console.error('Error fetching Instagram posts:', error);
-      });
-  }, []);
-
-
+const News = ({ data }) => {
   const options = {
     autoplay: true,
     dots: false,
@@ -41,15 +25,14 @@ const News = () => {
       },
     },
   };
-  console.log("posts", posts)
   return (
-    <div className="news">
+    <div className="products">
+      <h2 className="h-medium">Noticias</h2>
       <OwlCarousel className="owl-theme" {...options}>
-        {posts.map(post => (
-          <div key={post.id} className="instagram-post">
-            <img src={post.media_url} alt={post.caption} />
-            <p>{post.caption}</p>
-          </div>
+        {data.map(({ url }, index) => (
+          <a href="https://www.instagram.com/bambu_del_este/" key={index} target="_blank">
+            <Image id={url} />
+          </a>
         ))}
       </OwlCarousel>
     </div>

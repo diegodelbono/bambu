@@ -34,22 +34,22 @@ const Home = () => {
               <div className="container">
                 <div className="group-link" ref={groupLink}>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas#paisajismo" className="button button--big">
+                    <Link to="/plantas?s=plantas&scrollTo=paisajismo" className="button button--big">
                       Paisajismo
                     </Link>
                   </div>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas#agro" className="button button--big">
+                    <Link to="/plantas?s=plantas&scrollTo=agro" className="button button--big">
                       Agro
                     </Link>
                   </div>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas#proyectosproductivos" className="button button--big">
+                    <Link to="/plantas?s=plantas&scrollTo=proyectosproductivos" className="button button--big">
                       Proyectos productivos
                     </Link>
                   </div>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas#medioambiente" className="button button--big">
+                    <Link to="/plantas?s=plantas&scrollTo=medioambiente" className="button button--big">
                       Medio ambiente
                     </Link>
                   </div>
@@ -58,7 +58,7 @@ const Home = () => {
               <Gallery data={data.acf.gallery} />
               <div className="container">
                 <Summary data={data.acf.summary} />
-                <News />
+                <News data={data.acf.news} />
               </div>
             </div>
           </main>

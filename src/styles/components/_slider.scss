@@ -9,6 +9,10 @@
   padding: $padding-no $padding-lg;
   z-index: -1;
 
+  h1 {
+    text-align: center;
+  }
+
   @include breakpoint(lg) {
     height: 50vh;
   }

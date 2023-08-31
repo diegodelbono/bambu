@@ -16,7 +16,7 @@ const Nav = ({ isOpen, onCloseNav }) => {
           Insumos
         </NavLink>
         <NavLink className="nav__item p-small" to="/bambu?s=el-bambu" onClick={onCloseNav}>
-          El Bambu
+          El bambú
         </NavLink>
         <NavLink className="nav__item p-small" to="/nosotros?s=nosotros" onClick={onCloseNav}>
           Nosotros

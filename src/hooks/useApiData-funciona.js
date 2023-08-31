@@ -3,7 +3,8 @@ import axios from "axios";
 
 const useApiData = (url) => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // Cambiado a true inicialmente
+  const effectRan = useRef(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,10 +28,16 @@ const useApiData = (url) => {
       }
     };
 
-    fetchData();
+    if (!effectRan.current) {
+      fetchData();
+    }
+
+    return () => (effectRan.current = true);
   }, [url]);
 
   return { data, isLoading };
 };
 
 export default useApiData;
+
+// `https://bambudeleste.com.uy/wordpress/wp-json/wp/v2/pages/?slug=${url}&_fields=acf&acf_format=standard`;

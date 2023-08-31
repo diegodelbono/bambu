@@ -22,7 +22,7 @@
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     display: none;
   }
 
@@ -44,7 +44,7 @@
   position: relative;
   width: 3rem;
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     display: block;
   }
 

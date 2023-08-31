@@ -15,6 +15,12 @@
     @include breakpoint(md) {
       margin: $margin-xs $margin-no;
     }
+
+    p {
+      a {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__figure {

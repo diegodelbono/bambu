@@ -1,21 +1,12 @@
 import React from "react";
-import { arrayOf, shape } from "prop-types";
 
 const Button = ({ data }) => {
-  const { link, value } = data;
+  const { link, value, url } = data;
   return (
-    <a href={link} className="button">
+    <a href={link || url} className="button">
       {value}
     </a>
   );
-};
-
-Button.propTypes = {
-  data: arrayOf(shape({})),
-};
-
-Button.defaultProps = {
-  data: [],
 };
 
 export default Button;

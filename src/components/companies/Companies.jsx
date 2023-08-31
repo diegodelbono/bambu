@@ -1,7 +1,9 @@
 import React from "react";
 import OwlCarousel from "react-owl-carousel";
+import { Image } from "../image";
 
 const Companies = ({ data }) => {
+  const { title, company } = data;
   const options = {
     loop: true,
     autoplay: true,
@@ -24,13 +26,17 @@ const Companies = ({ data }) => {
       },
     },
   };
-  const { title } = data;
+
   return (
     <>
       <div className="products">
         <h2 className="h-medium">{title}</h2>
         <OwlCarousel className="owl-theme" {...options}>
-          <div className="imgs"></div>
+          {company.map(({ logo, link }, index) => (
+            <a href={link} key={index} target="_blank">
+              <Image id={logo.url} />
+            </a>
+          ))}
         </OwlCarousel>
       </div>
     </>

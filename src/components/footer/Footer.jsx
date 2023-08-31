@@ -14,20 +14,20 @@ const Footer = () => {
               <NavLink to="/plantas?s=plantas">Plantas</NavLink>
               <NavLink to="/servicios?s=servicios">Servicios</NavLink>
               <NavLink to="/insumos?s=insumos">Insumos</NavLink>
-              <NavLink to="/bambu?s=el-bambu">El Bambu</NavLink>
+              <NavLink to="/bambu?s=el-bambu">El bambú</NavLink>
               <NavLink to="/nosotros?s=nosotros">Nosotros</NavLink>
             </div>
           </div>
           <div className="footer__col">
             <div className="footer__menu">
-              <a href="#">WhatsApp</a>
+              <a href="https://api.whatsapp.com/send?phone=59898464748&text=Hola,%20me%20interesaría%20recibir%20más%20información%20sobre%20Bambú%20del%20Este.%20Gracias">WhatsApp</a>
               <a href="https://www.instagram.com/bambu_del_este" target="_blank">Instagram</a>
               <a href="https://www.facebook.com/BambudelEsteUruguay/" target="_blank">Facebook</a>
             </div>
           </div>
           <div className="footer__col footer__col--end">
             <a href="mailto:vivero@bambudeleste.com.uy">vivero@bambudeleste.com.uy</a>
-            <div> +598 98 46 47 48</div>
+            <div><a href="tel:+59898464748">+598 98 46 47 48</a></div>
             <div className="footer__info">
               <div>
                 Costa Azul, <br /> Canelones Uruguay

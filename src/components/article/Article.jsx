@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Image } from "../../components";
-import { arrayOf, shape } from "prop-types";
 import { converFormatText } from "../../utils/format"
 
 const Article = ({ data }) => {
@@ -25,7 +24,7 @@ const Article = ({ data }) => {
           <Image id={img.url} />
         </div>
         <div className="article__summary">
-          <p className="p-small">{description}</p>
+          <p className="p-small" dangerouslySetInnerHTML={{ __html: description }} />
         </div>
         <div className="article__button">
           <Button data={button} />
@@ -35,12 +34,6 @@ const Article = ({ data }) => {
   );
 };
 
-Article.propTypes = {
-  data: arrayOf(shape({})),
-};
 
-Article.defaultProps = {
-  data: [],
-};
 
 export default Article;

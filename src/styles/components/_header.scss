@@ -5,15 +5,16 @@
   @include transition(all 0.5s ease);
 
   &__bg {
-    transform: translateX(-100%);
+    transform: translateX(100%);
     @include transition(all 0.5s ease);
     background: $primary-color;
     height: 100vh;
     width: 100%;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: -1;
     position: fixed;
+    //border: 2px solid red;
   }
 
   &--overlay {
@@ -94,6 +95,7 @@
       border-top: 1px solid white;
       padding: 1rem 0 0;
       display: block;
+
       * {
         color: white;
       }

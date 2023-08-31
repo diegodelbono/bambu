@@ -3,13 +3,13 @@ import axios from "axios";
 
 const useApiData = (url) => {
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // Cambiado a true inicialmente
+  const [isLoading, setIsLoading] = useState(true);
   const effectRan = useRef(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const cachedData = localStorage.getItem(url);
+        const cachedData = sessionStorage.getItem(url);
         if (cachedData) {
           setData(JSON.parse(cachedData));
           setIsLoading(false);
@@ -20,7 +20,7 @@ const useApiData = (url) => {
           );
           setData(response.data[0]);
           setIsLoading(false);
-          localStorage.setItem(url, JSON.stringify(response.data[0]));
+          sessionStorage.setItem(url, JSON.stringify(response.data[0]));
         }
       } catch (error) {
         setIsLoading(false);
@@ -39,5 +39,3 @@ const useApiData = (url) => {
 };
 
 export default useApiData;
-
-// `https://bambudeleste.com.uy/wordpress/wp-json/wp/v2/pages/?slug=${url}&_fields=acf&acf_format=standard`;

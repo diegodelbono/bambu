@@ -75,13 +75,13 @@ const Header = () => {
           </div>
         </div>
         <div className="header__footer">
-          <Link to="/">Whatsapp</Link>
+          <a href="https://api.whatsapp.com/send?phone=59898464748&text=Hola,%20me%20interesaría%20recibir%20más%20información%20sobre%20Bambú%20del%20Este.%20Gracias">WhatsApp</a>
           <a href="https://www.instagram.com/bambu_del_este" target="_blank">Instagram</a>
           <a href="https://www.facebook.com/BambudelEsteUruguay/" target="_blank">Facebook</a>
 
           <div className="header__footer--end">
             <a href="mailto:vivero@bambudeleste.com.uy">vivero@bambudeleste.com.uy</a>
-            <span>+598 98 46 47 48</span>
+            <div><a href="tel:+59898464748">+598 98 46 47 48</a></div>
           </div>
         </div>
       </div>
