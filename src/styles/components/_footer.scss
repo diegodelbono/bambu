@@ -44,20 +44,23 @@
   }
 
   &__col {
-    &--end {
-      margin-right: 0;
-      margin-left: auto;
+    flex: 1;
+
+    &--flex {
+      display: flex;
 
       @include breakpoint(md) {
-        margin: 0;
+        flex-direction: column;
       }
     }
   }
 
   .logo {
+    margin-right: 3rem;
     width: 2.25rem;
 
     @include breakpoint(md) {
+      margin-bottom: 2rem;
       width: 1.5rem;
     }
   }

@@ -48,4 +48,10 @@
       padding: 0;
     }
   }
+
+  &--link {
+    border-bottom: $border-type-base $border-color-base;
+    cursor: pointer;
+    display: inline-block;
+  }
 }

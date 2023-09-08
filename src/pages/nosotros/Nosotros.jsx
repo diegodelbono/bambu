@@ -17,7 +17,6 @@ const Nosotros = () => {
               <Summary data={data.acf.summary} />
               <Accordion data={data.acf.accordion} />
               <About data={data.acf.about} />
-              <Companies data={data.acf.companies} />
               <Contact />
             </div>
           </main>

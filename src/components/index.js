@@ -14,3 +14,4 @@ export { News } from "./news";
 export { Footer } from "./footer";
 export { Slider } from "./slider";
 export { Summary } from "./summary";
+export { Species } from "./species";

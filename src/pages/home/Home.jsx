@@ -58,8 +58,8 @@ const Home = () => {
               <Gallery data={data.acf.gallery} />
               <div className="container">
                 <Summary data={data.acf.summary} />
-                <News data={data.acf.news} />
               </div>
+              <News data={data.acf.news} />
             </div>
           </main>
         </>

@@ -7,3 +7,19 @@
     }
   }
 }
+
+
+
+.carousel-section {
+  overflow: hidden;
+
+  .owl-carousel {
+    .owl-stage {
+      padding-left: 0 !important;
+    }
+
+    .owl-stage-outer {
+      overflow: unset;
+    }
+  }
+}

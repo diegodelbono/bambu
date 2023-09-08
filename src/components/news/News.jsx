@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import OwlCarousel from "react-owl-carousel";
 import axios from "axios";
 import { Image } from "../image";
 
 const News = ({ data }) => {
+
   const options = {
     autoplay: true,
     dots: false,
@@ -26,16 +27,20 @@ const News = ({ data }) => {
     },
   };
   return (
-    <div className="products">
-      <h2 className="h-medium">Noticias</h2>
-      <OwlCarousel className="owl-theme" {...options}>
-        {data.map(({ url }, index) => (
-          <a href="https://www.instagram.com/bambu_del_este/" key={index} target="_blank">
-            <Image id={url} />
-          </a>
-        ))}
-      </OwlCarousel>
-    </div>
+    <section class="carousel-section">
+      <div class="container">
+        <div className="products">
+          <h2 className="h-medium">Noticias</h2>
+          <OwlCarousel className="owl-theme" {...options}>
+            {data.map(({ url }, index) => (
+              <a href="https://www.instagram.com/bambu_del_este/" key={index} target="_blank">
+                <Image id={url} />
+              </a>
+            ))}
+          </OwlCarousel>
+        </div>
+      </div>
+    </section>
   );
 };
 

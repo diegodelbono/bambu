@@ -21,7 +21,7 @@ const Insumos = () => {
               <Summary data={data.acf.summary} />
               <div className="products">
                 <h2 className="h-medium">{data.acf.products.title}</h2>
-                <div className="grid">
+                <div className="grid grid--col-3">
                   {data.acf.products.product.map(({ img, img_secondary, summary, title }, index) => (
                     <div className="grid__col" key={index}>
                       <div className="product">
@@ -50,5 +50,6 @@ const Insumos = () => {
     </>
   );
 };
+
 
 export default Insumos;

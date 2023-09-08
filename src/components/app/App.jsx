@@ -29,10 +29,9 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter basename="/bambu">
+      <BrowserRouter basename="/">
         <Header />
         <Routes>
-
           <Route path="/" Component={Home} />
           <Route path="/bambu" Component={Bambu} exact />
           <Route path="/nosotros" Component={Nosotros} exact />

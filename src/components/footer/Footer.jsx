@@ -6,16 +6,19 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer__container">
-          <Link to="/">
-            <div className="logo logo--imago" />
-          </Link>
+
           <div className="footer__col">
-            <div className="footer__menu">
-              <NavLink to="/plantas?s=plantas">Plantas</NavLink>
-              <NavLink to="/servicios?s=servicios">Servicios</NavLink>
-              <NavLink to="/insumos?s=insumos">Insumos</NavLink>
-              <NavLink to="/bambu?s=el-bambu">El bambú</NavLink>
-              <NavLink to="/nosotros?s=nosotros">Nosotros</NavLink>
+            <div className="footer__col--flex">
+              <Link to="/">
+                <div className="logo logo--imago" />
+              </Link>
+              <div className="footer__menu">
+                <NavLink to="/plantas?s=plantas">Plantas</NavLink>
+                <NavLink to="/servicios?s=servicios">Servicios</NavLink>
+                <NavLink to="/insumos?s=insumos">Insumos</NavLink>
+                <NavLink to="/bambu?s=el-bambu">El bambú</NavLink>
+                <NavLink to="/nosotros?s=nosotros">Nosotros</NavLink>
+              </div>
             </div>
           </div>
           <div className="footer__col">
@@ -25,6 +28,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/BambudelEsteUruguay/" target="_blank">Facebook</a>
             </div>
           </div>
+          <div className="footer__col footer__col--end">Envíos a todo el país</div>
           <div className="footer__col footer__col--end">
             <a href="mailto:vivero@bambudeleste.com.uy">vivero@bambudeleste.com.uy</a>
             <div><a href="tel:+59898464748">+598 98 46 47 48</a></div>
