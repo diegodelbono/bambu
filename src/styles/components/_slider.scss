@@ -32,6 +32,8 @@
 
   &__caption {
     margin: $margin-md $margin-no;
+    position: relative;
+    z-index: 4;
 
     @include breakpoint(md) {
       br {

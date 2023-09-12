@@ -1,6 +1,7 @@
 .accordion {
   margin: $margin-lg $margin-no;
 
+
   @include breakpoint(md) {
     margin: $margin-sm $margin-no;
   }
@@ -9,6 +10,7 @@
     display: flex;
     gap: $gap-base;
     margin-bottom: $margin-md;
+    scroll-margin: 10rem;
 
     @include breakpoint(md) {
       gap: 1rem;

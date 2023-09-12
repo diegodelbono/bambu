@@ -28,7 +28,7 @@ const Species = ({ data }) => {
                             <p className="p-small">
                                 <strong>{title}</strong>
                             </p>
-                            <p>{extract}</p>
+                            <p dangerouslySetInnerHTML={{ __html: extract }} />
                             {openIndexes.includes(index) && (
                                 <p className="p-small" dangerouslySetInnerHTML={{ __html: summary }} />
                             )}

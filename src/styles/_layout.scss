@@ -71,6 +71,7 @@ figure {
 }
 
 .products {
+  scroll-margin: 10rem;
   margin-bottom: 8rem;
 
   @include breakpoint(md) {

@@ -1,7 +1,15 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header, Footer } from "../../components";
-import { Home, Bambu, Nosotros, Plantas, Servicios, Insumos, Pruebas } from "../../pages";
+import {
+  Home,
+  Bambu,
+  Nosotros,
+  Plantas,
+  Servicios,
+  Insumos,
+  Pruebas,
+} from "../../pages";
 import Lenis from "@studio-freight/lenis";
 
 import $ from "jquery";
@@ -25,7 +33,6 @@ const App = () => {
   }
 
   requestAnimationFrame(raf);
-
 
   return (
     <>
