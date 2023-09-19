@@ -2,23 +2,43 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Nav = ({ isOpen, onCloseNav }) => {
-
   return (
     <>
       <nav className={`nav ${isOpen ? "nav--open" : ""}`}>
-        <NavLink className="nav__item p-small" to="/plantas?s=plantas" onClick={onCloseNav}>
-          Plantas
+        <NavLink
+          className="nav__item p-small"
+          to="/especies?s=especies"
+          onClick={onCloseNav}
+        >
+          Especies
         </NavLink>
-        <NavLink className="nav__item p-small" to="/servicios?s=servicios" onClick={onCloseNav}>
+        <NavLink
+          className="nav__item p-small"
+          to="/usos?s=usos"
+          onClick={onCloseNav}
+        >
+          Usos
+        </NavLink>
+        <NavLink
+          className="nav__item p-small"
+          to="/servicios?s=servicios"
+          onClick={onCloseNav}
+        >
           Servicios
         </NavLink>
-        <NavLink className="nav__item p-small" to="/insumos?s=insumos" onClick={onCloseNav}>
+        <NavLink
+          className="nav__item p-small"
+          to="/insumos?s=insumos"
+          onClick={onCloseNav}
+        >
           Insumos
         </NavLink>
-        <NavLink className="nav__item p-small" to="/bambu?s=el-bambu" onClick={onCloseNav}>
-          El bambú
-        </NavLink>
-        <NavLink className="nav__item p-small" to="/nosotros?s=nosotros" onClick={onCloseNav}>
+
+        <NavLink
+          className="nav__item p-small"
+          to="/nosotros?s=nosotros"
+          onClick={onCloseNav}
+        >
           Nosotros
         </NavLink>
       </nav>

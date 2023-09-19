@@ -1,1 +1,0 @@
-export { default as Bambu } from "./Bambu";

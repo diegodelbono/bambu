@@ -24,7 +24,7 @@ const Home = () => {
               <h2 className="h-medium text-white">
                 Somos un vivero especializado <br />
                 en la producción y venta de <br />
-                plantas de bambú en Uruguay.
+                usos de bambú en Uruguay.
               </h2>
             </div>
           </div>
@@ -34,22 +34,34 @@ const Home = () => {
               <div className="container">
                 <div className="group-link" ref={groupLink}>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas&scrollTo=paisajismo" className="button button--big">
+                    <Link
+                      to="/usos?s=usos&scrollTo=paisajismo"
+                      className="button button--big"
+                    >
                       Paisajismo
                     </Link>
                   </div>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas&scrollTo=agro" className="button button--big">
+                    <Link
+                      to="/usos?s=usos&scrollTo=agro"
+                      className="button button--big"
+                    >
                       Agro
                     </Link>
                   </div>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas&scrollTo=proyectosproductivos" className="button button--big">
+                    <Link
+                      to="/usos?s=usos&scrollTo=proyectosproductivos"
+                      className="button button--big"
+                    >
                       Proyectos productivos
                     </Link>
                   </div>
                   <div className="group-link__item">
-                    <Link to="/plantas?s=plantas&scrollTo=medioambiente" className="button button--big">
+                    <Link
+                      to="/usos?s=usos&scrollTo=medioambiente"
+                      className="button button--big"
+                    >
                       Medio ambiente
                     </Link>
                   </div>
@@ -63,8 +75,7 @@ const Home = () => {
             </div>
           </main>
         </>
-      )
-      }
+      )}
     </>
   );
 };

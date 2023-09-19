@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header, Footer } from "../../components";
 import {
   Home,
-  Bambu,
+  Especies,
   Nosotros,
-  Plantas,
+  Usos,
   Servicios,
   Insumos,
-  Pruebas,
 } from "../../pages";
 import Lenis from "@studio-freight/lenis";
 
@@ -40,12 +39,11 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/bambu" Component={Bambu} exact />
+          <Route path="/especies" Component={Especies} exact />
           <Route path="/nosotros" Component={Nosotros} exact />
-          <Route path="/plantas" Component={Plantas} exact />
+          <Route path="/usos" Component={Usos} exact />
           <Route path="/servicios" Component={Servicios} exact />
           <Route path="/insumos" Component={Insumos} exact />
-          <Route path="/pruebas" Component={Pruebas} exact />
         </Routes>
         <Footer />
       </BrowserRouter>

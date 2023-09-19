@@ -13,10 +13,10 @@ const Footer = () => {
                 <div className="logo logo--imago" />
               </Link>
               <div className="footer__menu">
-                <NavLink to="/plantas?s=plantas">Plantas</NavLink>
+                <NavLink to="/especies?s=especies">Especies</NavLink>
+                <NavLink to="/usos?s=usos">Usos</NavLink>
                 <NavLink to="/servicios?s=servicios">Servicios</NavLink>
                 <NavLink to="/insumos?s=insumos">Insumos</NavLink>
-                <NavLink to="/bambu?s=el-bambu">El bambú</NavLink>
                 <NavLink to="/nosotros?s=nosotros">Nosotros</NavLink>
               </div>
             </div>

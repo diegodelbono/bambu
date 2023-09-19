@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Accordion, Loading, Slider, Summary, Image, Species } from "../../components";
+import {
+  Accordion,
+  Loading,
+  Slider,
+  Summary,
+  Image,
+  Species,
+} from "../../components";
 import useApiData from "../../hooks/useApiData";
 
-const Bambu = () => {
+const Especies = () => {
   const [params] = useSearchParams();
   const { data, isLoading } = useApiData(params.get("s"));
 
@@ -30,7 +37,6 @@ const Bambu = () => {
     return <Loading />;
   }
 
-
   return (
     <>
       {data && (
@@ -50,4 +56,4 @@ const Bambu = () => {
   );
 };
 
-export default Bambu;
+export default Especies;

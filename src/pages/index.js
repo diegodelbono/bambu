@@ -1,7 +1,6 @@
 export { Home } from "./home";
-export { Bambu } from "./bambu";
+export { Especies } from "./especies";
 export { Nosotros } from "./nosotros";
-export { Plantas } from "./plantas";
+export { Usos } from "./usos";
 export { Servicios } from "./servicios";
 export { Insumos } from "./insumos";
-export { Pruebas } from "./pruebas";

@@ -4,21 +4,22 @@ import useApiData from "../../hooks/useApiData";
 import { useSearchParams } from "react-router-dom";
 import useScroll from "../../hooks/useScroll";
 
-const Plantas = () => {
+const Usos = () => {
   const [params] = useSearchParams();
   const { data, isLoading } = useApiData(params.get("s"));
+
+  console.log("data", data);
 
   const scrollTo = params.get("scrollTo");
 
   useEffect(() => {
-
-    console.log("scrollTo", scrollTo)
+    console.log("scrollTo", scrollTo);
 
     if (data) {
       const timeoutId = setTimeout(() => {
         const target = document.getElementById(scrollTo);
 
-        console.log("target", target)
+        console.log("target", target);
         if (target) {
           target.scrollIntoView({
             behavior: "smooth",
@@ -35,7 +36,9 @@ const Plantas = () => {
     return <Loading />;
   }
 
-  { console.log("data.acf.article", data.acf.article) }
+  {
+    console.log("data.acf.article", data.acf.article);
+  }
 
   return (
     <>
@@ -56,4 +59,4 @@ const Plantas = () => {
   );
 };
 
-export default Plantas;
+export default Usos;
