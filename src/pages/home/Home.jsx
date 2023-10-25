@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Gallery, Loading, News, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
@@ -8,6 +8,10 @@ const Home = () => {
   const { data, isLoading } = useApiData("home");
   const groupLink = useRef(null);
   useGroupLink(groupLink);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (isLoading) {
     return <Loading />;
@@ -24,7 +28,7 @@ const Home = () => {
               <h2 className="h-medium text-white">
                 Somos un vivero especializado <br />
                 en la producción y venta de <br />
-                usos de bambú en Uruguay.
+                plantas de bambú en Uruguay.
               </h2>
             </div>
           </div>

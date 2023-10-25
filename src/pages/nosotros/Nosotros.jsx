@@ -1,11 +1,16 @@
-import React from "react";
-import { About, Accordion, Companies, Contact, Slider, Summary } from "../../components";
+import React, { useEffect } from "react";
+import { About, Accordion, Contact, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 import { useSearchParams } from "react-router-dom";
 
 const Nosotros = () => {
   const [params] = useSearchParams();
   const { data, isLoading } = useApiData(params.get("s"));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       {data && (

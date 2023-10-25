@@ -4,7 +4,6 @@ import axios from "axios";
 import { Image } from "../image";
 
 const News = ({ data }) => {
-
   const options = {
     autoplay: true,
     dots: false,
@@ -27,13 +26,17 @@ const News = ({ data }) => {
     },
   };
   return (
-    <section class="carousel-section">
-      <div class="container">
+    <section className="carousel-section">
+      <div className="container">
         <div className="products">
           <h2 className="h-medium">Actualidad</h2>
           <OwlCarousel className="owl-theme" {...options}>
             {data.map(({ url }, index) => (
-              <a href="https://www.instagram.com/bambu_del_este/" key={index} target="_blank">
+              <a
+                href="https://www.instagram.com/bambu_del_este/"
+                key={index}
+                target="_blank"
+              >
                 <Image id={url} />
               </a>
             ))}
@@ -43,7 +46,6 @@ const News = ({ data }) => {
     </section>
   );
 };
-
 
 //IGQWRPNUtleG1uTDJMSmJXZAVZAnOWxmLXIxR01mVVVyZAWtrYVhsd3FSaDhEby1YUm50YmJ4a3pHdUI0eE9RZA081YkFBbE8xa3cwZA1BSRFJfOWVrcUpnd1A0Qks0eEhqdWNQWGlpdks4Y2M5bWJFaE5vaFZAIMWRjSE0ZD
 export default News;

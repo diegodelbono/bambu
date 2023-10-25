@@ -62,11 +62,15 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${navOpen ? "header--expand" : ""} ${overlappingDivs.length > 0 ? "header--overlay" : ""}`}>
+    <header
+      className={`header ${navOpen ? "header--expand" : ""} ${
+        overlappingDivs.length > 0 ? "header--overlay" : ""
+      }`}
+    >
       <div className="header__container container">
-        <Link to="/">
+        <a href="/">
           <div id="logo" className="logo" ref={logoRef} />
-        </Link>
+        </a>
         <Nav isOpen={navOpen} onCloseNav={closeNav} />
         <div className="nav--toggle" onClick={toggleNav}>
           <div className={`nav-icon ${navOpen ? "nav-icon--active" : ""}`}>
@@ -75,13 +79,26 @@ const Header = () => {
           </div>
         </div>
         <div className="header__footer">
-          <a href="https://api.whatsapp.com/send?phone=59898464748&text=Hola,%20me%20interesaría%20recibir%20más%20información%20sobre%20Bambú%20del%20Este.%20Gracias">WhatsApp</a>
-          <a href="https://www.instagram.com/bambu_del_este" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/BambudelEsteUruguay/" target="_blank">Facebook</a>
+          <a href="https://api.whatsapp.com/send?phone=59898464748&text=Hola,%20me%20interesaría%20recibir%20más%20información%20sobre%20Bambú%20del%20Este.%20Gracias">
+            WhatsApp
+          </a>
+          <a href="https://www.instagram.com/bambu_del_este" target="_blank">
+            Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/BambudelEsteUruguay/"
+            target="_blank"
+          >
+            Facebook
+          </a>
 
           <div className="header__footer--end">
-            <a href="mailto:vivero@bambudeleste.com.uy">vivero@bambudeleste.com.uy</a>
-            <div><a href="tel:+59898464748">+598 98 46 47 48</a></div>
+            <a href="mailto:vivero@bambudeleste.com.uy">
+              vivero@bambudeleste.com.uy
+            </a>
+            <div>
+              <a href="tel:+59898464748">+598 98 46 47 48</a>
+            </div>
           </div>
         </div>
       </div>

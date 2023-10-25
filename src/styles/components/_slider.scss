@@ -1,7 +1,7 @@
 .slider {
   @include position-sticky;
   align-items: center;
-  background-size: auto 100% !important;
+  background-size: cover !important;
   display: flex;
   height: 100vh;
   justify-content: center;

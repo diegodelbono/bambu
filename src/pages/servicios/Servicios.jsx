@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Article, Loading, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 
 const Servicios = () => {
   const { data, isLoading } = useApiData("servicios");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (isLoading) {
     return <Loading />;

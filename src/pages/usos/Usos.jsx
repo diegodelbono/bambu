@@ -2,24 +2,22 @@ import React, { useEffect } from "react";
 import { Article, Loading, Slider, Summary } from "../../components";
 import useApiData from "../../hooks/useApiData";
 import { useSearchParams } from "react-router-dom";
-import useScroll from "../../hooks/useScroll";
 
 const Usos = () => {
   const [params] = useSearchParams();
   const { data, isLoading } = useApiData(params.get("s"));
 
-  console.log("data", data);
-
   const scrollTo = params.get("scrollTo");
 
   useEffect(() => {
-    console.log("scrollTo", scrollTo);
+    window.scrollTo(0, 0);
+  }, []);
 
+  useEffect(() => {
     if (data) {
       const timeoutId = setTimeout(() => {
         const target = document.getElementById(scrollTo);
 
-        console.log("target", target);
         if (target) {
           target.scrollIntoView({
             behavior: "smooth",
@@ -34,10 +32,6 @@ const Usos = () => {
 
   if (isLoading) {
     return <Loading />;
-  }
-
-  {
-    console.log("data.acf.article", data.acf.article);
   }
 
   return (

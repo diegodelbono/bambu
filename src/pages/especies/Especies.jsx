@@ -14,6 +14,10 @@ const Especies = () => {
   const [params] = useSearchParams();
   const { data, isLoading } = useApiData(params.get("s"));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const scrollTo = params.get("scrollTo");
 
   useEffect(() => {
